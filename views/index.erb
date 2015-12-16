@@ -4,7 +4,7 @@
   <% @links.each do |link| %>
     <li>
       Title: <%= link.title %>
-      URL: <a href="<%= link.url %>"><%= link.url %></a>
+      URL:   <%= link.url   %>
     </li>
   <% end %>
 </ul>
@@ -12,5 +12,3 @@
 <form action="/links/new">
  <input type="submit" value="Add Link">
 </form>
-
-whatever

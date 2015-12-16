@@ -1,7 +1,9 @@
+ENV['RACK_ENV'] ||= "development"
+
 require 'sinatra/base'
 require_relative '../lib/link'
 
-class Bookmark < Sinatra::Base
+class BookmarkManager < Sinatra::Base
   get '/' do
     redirect '/links'
   end
