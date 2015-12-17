@@ -1,3 +1,5 @@
+
+
 feature "display a list of links" do
   scenario "the user is shown a list of links" do
     Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
@@ -31,7 +33,7 @@ feature 'Adding tags' do
     fill_in 'title', with: 'ETL'
     fill_in 'tags', with: 'education'
 
-    click_button 'Create link'
+    click_button 'Create New'
     link = Link.first
     expect(link.tags.map(&:name)).to include('education')
   end
