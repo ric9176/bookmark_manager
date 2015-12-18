@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Book Mark Manager :)</title>
+</head>
+
+<body>
+  <% if @user %>
+  <h1>Welcome <%= @user.username %></h1>
+  <% end %>
+    <%= yield %>
+</body>
