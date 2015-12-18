@@ -73,3 +73,13 @@ feature 'multiple tags' do
     expect(link.tags.map(&:name)).to include('education', 'ruby')
   end
 end
+
+feature 'users can sign up' do
+  scenario 'a new users signs up' do
+    visit '/'
+    fill_in(:username, with: 'ric9176')
+    fill_in(:password, with: 'password')
+    click_button 'enter!'
+    expect(page).to have_content "Welcome mo fo!"
+  end
+end
