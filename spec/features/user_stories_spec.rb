@@ -1,4 +1,4 @@
-require 'spec_helper'
+
 
 feature "display a list of links" do
   scenario "the user is shown a list of links" do
@@ -77,11 +77,23 @@ feature 'multiple tags' do
 end
 
 feature 'users can sign up' do
+  let(:password){double(:password)}
   scenario 'a new users signs up' do
     visit '/'
-    fill_in(:username, with: 'ric9176')
+    fill_in(:username, with: 'ric9176@hotmail.com')
     fill_in(:password, with: 'password')
+    fill_in(:password_confirmation, with: 'password')
     click_button 'enter!'
-    expect(page).to have_content "Welcome mo fo!"
+    expect{click_button 'enter!'}.to change(User, :count)
+  end
+end
+
+feature 'users can sign up' do
+  scenario 'a new user needs vaid confirmation' do
+    visit '/'
+    fill_in(:username, with: 'ric9176@hotmail.com')
+    fill_in(:password, with: 'password')
+    fill_in(:password_confirmation, with: 'bananas!!!!')
+    expect{click_button 'enter!'}.not_to change(User, :count)
   end
 end
