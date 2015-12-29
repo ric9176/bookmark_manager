@@ -1,7 +1,7 @@
 
 feature "display a list of links" do
   scenario "the user is shown a list of links" do
-    Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
+    Link.create(url: 'http://whatevs.com', title: 'Makers Academy')
 
     visit '/'
 

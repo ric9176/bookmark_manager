@@ -1,3 +1,4 @@
+ENV["RACK_ENV"] ||= "development"
 require 'sinatra/base'
 require_relative '../lib/link.rb'
 
@@ -12,7 +13,7 @@ class Bookmark < Sinatra::Base
   end
 
   post '/' do
-     Link.create(url: params[:url], title: params[:title])
+    Link.create(url: params[:url], title: params[:title])
     redirect to('/')
   end
 
