@@ -1,6 +1,6 @@
 ENV["RACK_ENV"] ||= "development"
 require 'sinatra/base'
-require_relative '../lib/link.rb'
+require_relative './data_mapper_setup'
 
 class Bookmark < Sinatra::Base
   get '/' do
