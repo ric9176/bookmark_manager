@@ -1,0 +1,23 @@
+<h1> Links </h1>
+
+<ul id='links'>
+  <% @links.each do |link| %>
+    <li>
+      Title: <%= link.title %>
+      URL: <a href="<%= link.url %>"><%= link.url %></a>
+      TAGS: <%= link.tags.map(&:name).join(' ') %>
+    </li>
+  <% end %>
+</ul>
+
+<form action="/users" method="post">
+  Enter Username <input type="text" name="username" placeholder="Username" required autofocus>
+  Enter Password <input type="password" name="password" placeholder="Password" required autofocus>
+  Confirm Password <input type="password" name="password_confirmation" required autofocus>
+  <input type="submit" value="enter!">
+</form>
+
+
+<form action="/links/new">
+ <input type="submit" value="Add Link">
+</form>

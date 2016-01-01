@@ -1,11 +1,16 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html>
+=======
+
+>>>>>>> master
 <head>
   <title>Book Mark Manager :)</title>
 </head>
 
 <body>
   <% if current_user %>
+<<<<<<< HEAD
   <h1>Welcome, <%= current_user.email %></h1>
   <% end %>
   <% if flash[:notice] %>
@@ -14,3 +19,9 @@
     <%= yield %>
 </body>
 </html>
+=======
+  <h1>Welcome <%= current_user.username %></h1>
+  <% end %>
+    <%= yield %>
+</body>
+>>>>>>> master

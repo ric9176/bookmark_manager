@@ -3,7 +3,7 @@ feature "display a list of links" do
   scenario "the user is shown a list of links" do
     Link.create(url: 'http://whatevs.com', title: 'Makers Academy')
 
-    visit '/'
+    visit '/links'
 
     expect(page.status_code).to eq 200
 
@@ -12,6 +12,7 @@ feature "display a list of links" do
     end
   end
 end
+
 
 feature "links" do
 
