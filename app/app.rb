@@ -1,7 +1,7 @@
 ENV["RACK_ENV"] ||= "development"
 require 'sinatra/base'
 require 'sinatra/flash'
-require_relative './data_mapper_setup'
+require 'data_mapper_setup'
 
 class Bookmark < Sinatra::Base
   use Rack::MethodOverride
